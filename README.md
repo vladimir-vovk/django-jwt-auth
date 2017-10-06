@@ -35,7 +35,7 @@ urlpatterns = [
 ```
 
 Inside your_app create django restricted view:
-```
+```python
 import json
 
 from django.http import HttpResponse
