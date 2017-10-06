@@ -47,7 +47,9 @@ from jwt_auth.mixins import JSONWebTokenAuthMixin
 class RestrictedView(JSONWebTokenAuthMixin, View):
     def get(self, request):
         data = json.dumps({
-            'foo': 'bar'
+            'foo': 'bar',
+            'user_id': request.user.pk,
+            'token': request.token
         })
 
         return HttpResponse(data, content_type='application/json')
